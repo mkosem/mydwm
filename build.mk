@@ -15,7 +15,7 @@ LIBS = $(shell pkg-config --libs $(DEPENDENCIES)) $(XINERAMALIBS) -lrt
 
 # General compiler and linker flags
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=199309L -DVERSION=\"$(VERSION)\" $(XINERAMAFLAGS)
-CFLAGS = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os $(INCS) $(CPPFLAGS)
+CFLAGS = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -flto -funroll-all-loops -march=native -Ofast $(INCS) $(CPPFLAGS)
 LDFLAGS = $(LIBS)
 
 CC = cc
