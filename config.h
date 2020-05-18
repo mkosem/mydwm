@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char *fonts[]          = { "Noto Sans Bold:size=10" };
-static const char dmenufont[]       = "Noto Sans Bold:size=10";
+static const char *fonts[]          = { "Noto Sans UI Bold:size=10" };
+static const char dmenufont[]       = "Noto Sans UI Bold:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -17,7 +17,7 @@ static const char *colors[SchemeLast][3]      = {
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const unsigned int systraypinning = 1;       /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systraypinning = 2;       /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const Bool systraypinningfailfirst = True;   /* True: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const Bool showsystray       = True;     /* False means no systray */
 static const Bool showbar           = True;     /* False means no bar */
@@ -65,7 +65,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "j4-dmenu-desktop", NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "/home/mkosem/.dwm/shell.sh", NULL };
 static const char *lockcmd[]  = { "/home/mkosem/apps/xautolock/bin/xautolock", "-locknow", NULL };
 
 #include "push.c"
@@ -108,7 +108,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_e,      quit,           {0} },
 };
 
 /* button definitions */
